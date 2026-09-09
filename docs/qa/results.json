@@ -1,0 +1,38 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "visibleImagesLoaded": true
+  },
+  {
+    "width": 1024,
+    "overflow": false,
+    "errors": [],
+    "visibleImagesLoaded": true
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "errors": [],
+    "visibleImagesLoaded": true
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "errors": [],
+    "visibleImagesLoaded": true
+  },
+  {
+    "width": 360,
+    "overflow": false,
+    "errors": [],
+    "visibleImagesLoaded": true
+  },
+  {
+    "reducedMotion": {
+      "scrollBehavior": "auto",
+      "heroTransform": "none"
+    }
+  }
+]
