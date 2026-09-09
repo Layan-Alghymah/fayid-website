@@ -3,6 +3,8 @@ export const X_URL = "https://x.com/Fayidco_sa";
 export const CONTACT_EMAIL = "Fayid.comp@gmail.com";
 export const SUPPLIER_FORM_URL = "";
 export const CANONICAL_URL = "";
+export const TESTIMONIAL_URL =
+  "https://x.com/Fayidco_sa/status/2053796307425231013?s=20";
 
 export const siteConfig = {
   name: "فائض | Fayid",
@@ -98,6 +100,21 @@ export const content = {
       text: "قيمة أكبر من الموارد المُستثمَرة في صنع كل قطعة.",
     },
   ],
+};
+export const partners = [
+  { name: "دنتيل للأقمشة", logo: "/partners/dantel.png" },
+  { name: "نيلا عباية", logo: "/partners/nila.png" },
+  { name: "أقمشة اللمدان", logo: "/partners/allamdan.png" },
+  { name: "مفنون للأقمشة", logo: "/partners/mafnoon.png" },
+  { name: "مشغل غرزة نورة", logo: null },
+];
+export const testimonial = {
+  quote:
+    "فائض فكرة ذكية تعالج مشكلة حقيقية في قطاع الأزياء — تسييل المخزون الراكد بطريقة مستدامة ومنظّمة.",
+  name: "د. نادر المطيري",
+  initials: "ن.م",
+  platform: "X",
+  url: TESTIMONIAL_URL,
 };
 export const images = {
   rack: {

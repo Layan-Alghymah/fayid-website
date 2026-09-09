@@ -382,7 +382,7 @@ footer[id] {
   right: 26px;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 17px;
 }
@@ -546,7 +546,7 @@ footer[id] {
 }
 .journey-heading {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1fr 2.2fr;
   align-items: start;
   gap: 40px;
 }
@@ -561,10 +561,11 @@ footer[id] {
 .journey h2 span {
   color: #b7c9c7;
 }
-.journey-heading > p {
+.journey-heading-copy > p {
   font-size: 15px;
   color: #c3cecf;
-  align-self: end;
+  margin-top: 22px;
+  max-width: 400px;
 }
 .journey-layout {
   display: grid;
@@ -778,6 +779,141 @@ footer[id] {
   margin-top: 5px;
   color: var(--muted);
 }
+.partners {
+  padding-block: 95px 90px;
+}
+.partners-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.partners-heading > p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.partners-rail {
+  margin-top: 55px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: max-content;
+  animation: partners-scroll 42s linear infinite;
+}
+.partners-rail:hover .partners-track,
+.partners-rail:focus-within .partners-track {
+  animation-play-state: paused;
+}
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.partner-mark {
+  flex: none;
+  height: 62px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner-mark img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.partner-type {
+  font-size: 15px;
+  color: var(--teal);
+  border: 1px solid var(--line);
+  padding: 13px 22px;
+  white-space: nowrap;
+}
+.testimonial {
+  padding-block: 100px 115px;
+}
+.testimonial-heading {
+  margin-top: 20px;
+  font-size: clamp(32px, 3.6vw, 52px);
+  max-width: 640px;
+}
+.testimonial-quote {
+  margin: 55px 0 0;
+  max-width: 780px;
+}
+.quote-mark {
+  display: block;
+  font:
+    90px/1 Georgia,
+    serif;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.testimonial-quote p {
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.7;
+  color: var(--teal);
+}
+.testimonial-quote footer {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.testimonial-quote cite {
+  font-style: normal;
+  font-weight: 600;
+}
+.testimonial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  margin-inline-start: auto;
+  font-size: 13px;
+}
+.testimonial-link .arrow {
+  font-size: 15px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .partners-track {
+    animation: none;
+    transform: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .partners-rail {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
 .supplier {
   padding-block: 95px 100px;
 }
@@ -799,26 +935,36 @@ footer[id] {
   font-size: 16px;
   color: var(--muted);
 }
-.supplier-button {
-  display: flex;
+.supplier-link {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: 25px;
-  width: 190px;
-  height: 190px;
-  justify-content: center;
-  border: 1px solid #a3b2ad;
-  border-radius: 50%;
-  font-size: 14px;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  gap: 16px;
+  padding-bottom: 14px;
+  font-size: 19px;
+  flex-shrink: 0;
 }
-.supplier-button:hover {
-  background: var(--teal);
-  color: var(--paper);
+.supplier-link:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
-.supplier-button .arrow {
-  font-size: 30px;
+.supplier-link:hover:before {
+  transform: scaleX(1.08);
+}
+.supplier-link .arrow {
+  font-size: 20px;
+  color: var(--gold);
+  transition: transform 0.3s ease;
+}
+.supplier-link:hover .arrow {
+  transform: translate(2px, -2px);
 }
 .store {
   margin: 0 var(--gutter) 95px;
@@ -1242,9 +1388,10 @@ footer[id] {
     font-size: 40px;
     margin-top: 25px;
   }
-  .journey-heading > p {
+  .journey-heading-copy > p {
     font-size: 14px;
     margin-top: 18px;
+    max-width: none;
   }
   .journey-layout {
     display: flex;
@@ -1358,6 +1505,52 @@ footer[id] {
     right: 27px;
     bottom: 28px;
   }
+  .partners {
+    padding-block: 55px 55px;
+  }
+  .partners-heading {
+    display: block;
+  }
+  .partners-heading > p {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .partners-rail {
+    margin-top: 34px;
+  }
+  .partners-track {
+    gap: 55px;
+    animation-duration: 26s;
+  }
+  .partner-mark {
+    height: 46px;
+    width: 110px;
+  }
+  .testimonial {
+    padding-block: 55px 60px;
+  }
+  .testimonial-heading {
+    font-size: 30px;
+    margin-top: 16px;
+  }
+  .testimonial-quote {
+    margin-top: 34px;
+  }
+  .quote-mark {
+    font: 60px/1 Georgia, serif;
+  }
+  .testimonial-quote p {
+    font-size: 21px;
+  }
+  .testimonial-quote footer {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+    padding-top: 18px;
+  }
+  .testimonial-link {
+    margin-inline-start: 0;
+  }
   .supplier {
     padding-block: 60px 65px;
   }
@@ -1372,21 +1565,13 @@ footer[id] {
     font-size: 14px;
     margin-top: 20px;
   }
-  .supplier-button {
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    border: 0;
-    border-bottom: 1px solid var(--teal);
+  .supplier-link {
     padding: 17px 0;
-    gap: 45px;
     margin-top: 22px;
-    justify-content: space-between;
-    font-size: 15px;
+    font-size: 16px;
   }
-  .supplier-button:hover {
-    background: none;
-    color: var(--secondary);
+  .supplier-link:before {
+    background: var(--teal);
   }
   .store {
     margin: 0 23px 60px;

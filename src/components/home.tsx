@@ -9,7 +9,14 @@ import {
   useTransform,
   useMotionValueEvent,
 } from "motion/react";
-import { content, images, navigation, siteConfig } from "@/lib/site";
+import {
+  content,
+  images,
+  navigation,
+  partners,
+  siteConfig,
+  testimonial,
+} from "@/lib/site";
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return (
@@ -253,7 +260,6 @@ function Hero() {
           />
           <div className="image-shade" />
           <div className="image-caption">
-            <span>قيمة كانت تنتظر.</span>
             <span dir="ltr">01 — A SECOND CHANCE</span>
           </div>
           <div className="hanging-tag">
@@ -297,16 +303,18 @@ function Journey() {
     <section id="journey" className="journey section-shell" ref={ref}>
       <div className="journey-heading">
         <Label number="02">كيف نعمل</Label>
-        <h2>
-          نفس القطعة.
-          <br />
-          <span>احتمال جديد.</span>
-        </h2>
-        <p>
-          نصل بين المخزون غير المباع
-          <br />
-          وفرصته التالية في السوق.
-        </p>
+        <div className="journey-heading-copy">
+          <h2>
+            نفس القطعة.
+            <br />
+            <span>احتمال جديد.</span>
+          </h2>
+          <p>
+            نصل بين المخزون غير المباع
+            <br />
+            وفرصته التالية في السوق.
+          </p>
+        </div>
       </div>
       <div className="journey-layout">
         <div className="journey-sticky">
@@ -466,7 +474,7 @@ export function Home() {
               <h2>
                 قيمة اقتصادية.
                 <br />
-                <span>أثر أقل.</span>
+                <span>هدر أقل.</span>
               </h2>
             </Reveal>
             <p className="impact-intro">
@@ -494,8 +502,52 @@ export function Home() {
             )}
           </div>
         </section>
+        <section className="partners section-shell" id="partners">
+          <div className="partners-heading">
+            <Label number="05">شركاء النجاح</Label>
+            <p>جهات شاركت فائض خطواته الأولى.</p>
+          </div>
+          <div className="partners-rail">
+            <div className="partners-track">
+              {[...partners, ...partners].map((partner, i) => (
+                <div className="partner-mark" key={`${partner.name}-${i}`}>
+                  {partner.logo ? (
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={160}
+                      height={80}
+                    />
+                  ) : (
+                    <span className="partner-type">{partner.name}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="testimonial section-shell" id="testimonial">
+          <Label number="06">آراء وإشادات</Label>
+          <Reveal>
+            <h2 className="testimonial-heading">قالوا عن فائض</h2>
+          </Reveal>
+          <Reveal>
+            <blockquote className="testimonial-quote">
+              <span className="quote-mark" aria-hidden="true">
+                ”
+              </span>
+              <p>{testimonial.quote}</p>
+              <footer>
+                <cite>{testimonial.name}</cite>
+                <Destination url={testimonial.url} className="testimonial-link">
+                  عرض المنشور <Arrow diagonal />
+                </Destination>
+              </footer>
+            </blockquote>
+          </Reveal>
+        </section>
         <section className="supplier section-shell" id="suppliers">
-          <Label number="05">لنبدأ دورة جديدة</Label>
+          <Label number="07">انضم إلينا</Label>
           <div className="supplier-layout">
             <Reveal>
               <h2>
@@ -516,10 +568,10 @@ export function Home() {
                   ? `mailto:${siteConfig.contact.email}`
                   : "")
               }
-              className="supplier-button"
+              className="supplier-link"
             >
-              <span>تواصل مع فائض</span>
-              <Arrow />
+              <span>تواصل معنا</span>
+              <Arrow diagonal />
             </Destination>
           </div>
         </section>
