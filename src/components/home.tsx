@@ -228,7 +228,7 @@ function Hero() {
     >
       <div className="hero-top">
         <span>
-          <i /> من المملكة العربية السعودية
+          من المملكة العربية السعودية
         </span>
         <span dir="ltr">A NEW CYCLE OF VALUE</span>
       </div>
@@ -239,7 +239,6 @@ function Hero() {
             <span>{content.hero.line1}</span>
             <span className="hero-last">
               {content.hero.line2}
-              <span className="gold-dot" />
             </span>
           </h1>
           <p className="hero-description">{content.hero.description}</p>
@@ -652,7 +651,7 @@ export function Home() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} فائض. جميع الحقوق محفوظة.</span>
           <span>
-            المملكة العربية السعودية <span className="footer-dot" />
+            المملكة العربية السعودية
           </span>
           <span dir="ltr">MADE FOR A NEW CYCLE.</span>
         </div>

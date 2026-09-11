@@ -280,9 +280,6 @@ footer[id] {
     sans-serif;
   letter-spacing: 2px;
 }
-.hero-top i {
-  display: none;
-}
 .hero-composition {
   height: min(650px, calc(100svh - 195px));
   min-height: 550px;
@@ -318,9 +315,6 @@ footer[id] {
 }
 .hero-last {
   position: relative;
-}
-.gold-dot {
-  display: none;
 }
 .hero-description {
   font-size: 16px;
@@ -394,16 +388,6 @@ footer[id] {
   box-shadow: 0 6px 20px #0002;
   text-align: center;
   border-radius: 10px;
-}
-.hanging-tag:before {
-  content: "";
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  top: 10px;
-  left: calc(50% - 3px);
-  background: #8c8069;
-  border-radius: 50%;
 }
 .hanging-tag:after {
   content: "";
@@ -1083,9 +1067,6 @@ footer[id] {
 .footer-bottom > span:last-child {
   font: 9px Arial;
   letter-spacing: 1.8px;
-}
-.footer-dot {
-  display: none;
 }
 @media (min-width: 1600px) {
   .hero-composition {
