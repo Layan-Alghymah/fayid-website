@@ -92,6 +92,7 @@ button {
   background: var(--teal);
   color: white;
   z-index: 100;
+  border-radius: 10px;
 }
 .skip-link:focus {
   top: 10px;
@@ -176,6 +177,7 @@ footer[id] {
   font-size: 14px;
   min-height: 48px;
   white-space: nowrap;
+  border-radius: 12px;
 }
 .arrow {
   font-family: Arial, sans-serif;
@@ -206,6 +208,7 @@ footer[id] {
   box-shadow: 0 8px 25px #0f3d4f12;
   z-index: 40;
   text-align: right;
+  border-radius: 12px;
 }
 .menu-toggle {
   display: none;
@@ -278,13 +281,7 @@ footer[id] {
   letter-spacing: 2px;
 }
 .hero-top i {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-left: 9px;
-  vertical-align: middle;
+  display: none;
 }
 .hero-composition {
   height: min(650px, calc(100svh - 195px));
@@ -323,13 +320,7 @@ footer[id] {
   position: relative;
 }
 .gold-dot {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  background: var(--gold);
-  border-radius: 50%;
-  margin-right: 18px;
-  margin-bottom: 16px;
+  display: none;
 }
 .hero-description {
   font-size: 16px;
@@ -369,11 +360,13 @@ footer[id] {
 .hero-image > img {
   object-position: 64% center;
   filter: saturate(0.65);
+  border-radius: 16px;
 }
 .image-shade {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, #142e2e88, transparent 40%);
+  border-radius: 16px;
 }
 .image-caption {
   position: absolute;
@@ -400,6 +393,7 @@ footer[id] {
   padding: 24px 18px 13px;
   box-shadow: 0 6px 20px #0002;
   text-align: center;
+  border-radius: 10px;
 }
 .hanging-tag:before {
   content: "";
@@ -584,6 +578,7 @@ footer[id] {
   height: 490px;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
 }
 .journey-photo > img {
   filter: saturate(0.55);
@@ -720,6 +715,9 @@ footer[id] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: var(--stone);
+  margin-inline: var(--gutter);
+  border-radius: 16px;
+  overflow: hidden;
 }
 .impact-image {
   position: relative;
@@ -750,7 +748,7 @@ footer[id] {
 .impact-copy {
   grid-column: 1;
   grid-row: 1;
-  padding: 70px var(--gutter) 65px 60px;
+  padding: 70px 52px 65px;
 }
 .impact-copy h2 {
   font-size: 49px;
@@ -973,6 +971,8 @@ footer[id] {
   grid-template-columns: 1fr 1fr;
   background: #e8e9df;
   min-height: 490px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 .store > div:first-child {
   padding: 58px 55px;
@@ -995,6 +995,7 @@ footer[id] {
   padding: 15px 23px;
   margin-top: 25px;
   font-size: 14px;
+  border-radius: 12px;
 }
 .store-visual {
   position: relative;
@@ -1016,6 +1017,7 @@ footer[id] {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
+  border-radius: 12px;
 }
 .store-label > span:last-child {
   color: var(--muted);
@@ -1083,12 +1085,7 @@ footer[id] {
   letter-spacing: 1.8px;
 }
 .footer-dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: #baa571;
-  border-radius: 50%;
-  margin-right: 8px;
+  display: none;
 }
 @media (min-width: 1600px) {
   .hero-composition {
@@ -1262,12 +1259,6 @@ footer[id] {
     line-height: 1.2;
     width: 100%;
     margin: 17px 0 18px;
-  }
-  .gold-dot {
-    width: 8px;
-    height: 8px;
-    margin-right: 12px;
-    margin-bottom: 9px;
   }
   .hero-description {
     font-size: 14px;
